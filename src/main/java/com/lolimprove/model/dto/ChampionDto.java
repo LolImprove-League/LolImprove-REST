@@ -165,4 +165,27 @@ public class ChampionDto {
     public void setSpells(List<ChampionSpellDto> spells) {
         this.spells = spells;
     }
+
+    @Override
+    public String toString() {
+        return "ChampionDto{" +
+                "info=" + info +
+                ", enemytips=" + enemytips +
+                ", stats=" + stats +
+                ", name='" + name + '\'' +
+                ", title='" + title + '\'' +
+                ", image=" + image +
+                ", tags=" + tags +
+                ", partype='" + partype + '\'' +
+                ", skins=" + skins +
+                ", passive=" + passive +
+                ", recommended=" + recommended +
+                ", allytips=" + allytips +
+                ", key='" + key + '\'' +
+                ", lore='" + lore + '\'' +
+                ", id=" + id +
+                ", blurb='" + blurb + '\'' +
+                ", spells=" + spells +
+                '}';
+    }
 }
