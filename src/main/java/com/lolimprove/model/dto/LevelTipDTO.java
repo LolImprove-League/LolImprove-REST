@@ -8,7 +8,7 @@ import java.util.List;
  * Created by LVDBB73 on 21/06/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LevelTipDto {
+public class LevelTipDTO {
 
     private List<String> effect;
     private List<String> label;

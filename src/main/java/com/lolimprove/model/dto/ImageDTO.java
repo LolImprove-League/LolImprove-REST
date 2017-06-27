@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * Created by LVDBB73 on 21/06/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ImageDto {
+public class ImageDTO {
 
     private String full;
     private String group;

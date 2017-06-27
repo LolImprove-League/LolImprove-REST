@@ -10,31 +10,31 @@ import java.util.List;
  * Created by LVDBB73 on 21/06/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ChampionDto {
+public class ChampionDTO {
 
-    private InfoDto info;
+    private InfoDTO info;
     private List<String> enemytips;
-    private StatsDto stats;
+    private StatsDTO stats;
     private String name;
     private String title;
-    private ImageDto image;
+    private ImageDTO image;
     private List<String> tags;
     private String partype;
-    private List<SkinDto> skins;
-    private PassiveDto passive;
-    private List<RecommendedDto> recommended;
+    private List<SkinDTO> skins;
+    private PassiveDTO passive;
+    private List<RecommendedDTO> recommended;
     private List<String> allytips;
     private String key;
     private String lore;
     private Integer id;
     private String blurb;
-    private List<ChampionSpellDto> spells;
+    private List<ChampionSpellDTO> spells;
 
-    public InfoDto getInfo() {
+    public InfoDTO getInfo() {
         return info;
     }
 
-    public void setInfo(InfoDto info) {
+    public void setInfo(InfoDTO info) {
         this.info = info;
     }
 
@@ -46,11 +46,11 @@ public class ChampionDto {
         this.enemytips = enemytips;
     }
 
-    public StatsDto getStats() {
+    public StatsDTO getStats() {
         return stats;
     }
 
-    public void setStats(StatsDto stats) {
+    public void setStats(StatsDTO stats) {
         this.stats = stats;
     }
 
@@ -70,11 +70,11 @@ public class ChampionDto {
         this.title = title;
     }
 
-    public ImageDto getImage() {
+    public ImageDTO getImage() {
         return image;
     }
 
-    public void setImage(ImageDto image) {
+    public void setImage(ImageDTO image) {
         this.image = image;
     }
 
@@ -94,27 +94,27 @@ public class ChampionDto {
         this.partype = partype;
     }
 
-    public List<SkinDto> getSkins() {
+    public List<SkinDTO> getSkins() {
         return skins;
     }
 
-    public void setSkins(List<SkinDto> skins) {
+    public void setSkins(List<SkinDTO> skins) {
         this.skins = skins;
     }
 
-    public PassiveDto getPassive() {
+    public PassiveDTO getPassive() {
         return passive;
     }
 
-    public void setPassive(PassiveDto passive) {
+    public void setPassive(PassiveDTO passive) {
         this.passive = passive;
     }
 
-    public List<RecommendedDto> getRecommended() {
+    public List<RecommendedDTO> getRecommended() {
         return recommended;
     }
 
-    public void setRecommended(List<RecommendedDto> recommended) {
+    public void setRecommended(List<RecommendedDTO> recommended) {
         this.recommended = recommended;
     }
 
@@ -158,17 +158,17 @@ public class ChampionDto {
         this.blurb = blurb;
     }
 
-    public List<ChampionSpellDto> getSpells() {
+    public List<ChampionSpellDTO> getSpells() {
         return spells;
     }
 
-    public void setSpells(List<ChampionSpellDto> spells) {
+    public void setSpells(List<ChampionSpellDTO> spells) {
         this.spells = spells;
     }
 
     @Override
     public String toString() {
-        return "ChampionDto{" +
+        return "ChampionDTO{" +
                 "info=" + info +
                 ", enemytips=" + enemytips +
                 ", stats=" + stats +

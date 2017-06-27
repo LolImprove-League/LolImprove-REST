@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * Used to represent data from the Riot Games API.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class InfoDto {
+public class InfoDTO {
 
     private Integer difficulty;
     private Integer attack;

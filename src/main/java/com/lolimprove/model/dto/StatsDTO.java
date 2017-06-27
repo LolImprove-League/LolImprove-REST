@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * Created by LVDBB73 on 21/06/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class StatsDto {
+public class StatsDTO {
 
     private Double armorperlevel;
     private Double hpperlevel;

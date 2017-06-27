@@ -6,18 +6,18 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * Created by LVDBB73 on 21/06/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PassiveDto {
+public class PassiveDTO {
 
-    private ImageDto image;
+    private ImageDTO image;
     private String sanitizedDescription;
     private String name;
     private String description;
 
-    public ImageDto getImage() {
+    public ImageDTO getImage() {
         return image;
     }
 
-    public void setImage(ImageDto image) {
+    public void setImage(ImageDTO image) {
         this.image = image;
     }
 

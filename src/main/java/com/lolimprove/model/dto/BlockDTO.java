@@ -8,17 +8,17 @@ import java.util.List;
  * Created by LVDBB73 on 21/06/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BlockDto {
+public class BlockDTO {
 
-    private List<BlockItemDto> items;
+    private List<BlockItemDTO> items;
     private Boolean recMath;
     private String type;
 
-    public List<BlockItemDto> getItems() {
+    public List<BlockItemDTO> getItems() {
         return items;
     }
 
-    public void setItems(List<BlockItemDto> items) {
+    public void setItems(List<BlockItemDTO> items) {
         this.items = items;
     }
 
@@ -40,7 +40,7 @@ public class BlockDto {
 
     @Override
     public String toString() {
-        return "BlockDto{" +
+        return "BlockDTO{" +
                 "items=" + items +
                 ", recMath=" + recMath +
                 ", type='" + type + '\'' +

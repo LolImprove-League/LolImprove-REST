@@ -8,10 +8,10 @@ import java.util.HashMap;
  * Created by LVDBB73 on 21/06/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ChampionListDto {
+public class ChampionListDTO {
 
     private HashMap<String, String> keys;
-    private HashMap<String, ChampionDto> data;
+    private HashMap<String, ChampionDTO> data;
     private String version;
     private String type;
     private String format;
@@ -24,11 +24,11 @@ public class ChampionListDto {
         this.keys = keys;
     }
 
-    public HashMap<String, ChampionDto> getData() {
+    public HashMap<String, ChampionDTO> getData() {
         return data;
     }
 
-    public void setData(HashMap<String, ChampionDto> data) {
+    public void setData(HashMap<String, ChampionDTO> data) {
         this.data = data;
     }
 

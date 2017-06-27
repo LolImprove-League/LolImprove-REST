@@ -8,7 +8,7 @@ import java.util.List;
  * Created by LVDBB73 on 21/06/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SpellVarsDto {
+public class SpellVarsDTO {
 
     private String ranksWith;
     private String dyn;

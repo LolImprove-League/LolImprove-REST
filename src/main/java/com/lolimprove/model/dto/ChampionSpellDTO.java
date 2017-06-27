@@ -8,14 +8,14 @@ import java.util.List;
  * Created by LVDBB73 on 21/06/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ChampionSpellDto {
+public class ChampionSpellDTO {
 
     private String cooldownBurn;
     private String resource;
-    private LevelTipDto leveltip;
-    private List<SpellVarsDto> vars;
+    private LevelTipDTO leveltip;
+    private List<SpellVarsDTO> vars;
     private String costType;
-    private ImageDto image;
+    private ImageDTO image;
     private String sanitizedDescription;
     private List<List<Double>> effect;
     private String tooltip;
@@ -27,7 +27,7 @@ public class ChampionSpellDto {
     private List<Integer> cost;
     private String key;
     private List<String> effectBurn;
-    private List<ImageDto> altImages;
+    private List<ImageDTO> altImages;
     private String name;
 
     public String getCooldownBurn() {
@@ -46,19 +46,19 @@ public class ChampionSpellDto {
         this.resource = resource;
     }
 
-    public LevelTipDto getLeveltip() {
+    public LevelTipDTO getLeveltip() {
         return leveltip;
     }
 
-    public void setLeveltip(LevelTipDto leveltip) {
+    public void setLeveltip(LevelTipDTO leveltip) {
         this.leveltip = leveltip;
     }
 
-    public List<SpellVarsDto> getVars() {
+    public List<SpellVarsDTO> getVars() {
         return vars;
     }
 
-    public void setVars(List<SpellVarsDto> vars) {
+    public void setVars(List<SpellVarsDTO> vars) {
         this.vars = vars;
     }
 
@@ -70,11 +70,11 @@ public class ChampionSpellDto {
         this.costType = costType;
     }
 
-    public ImageDto getImage() {
+    public ImageDTO getImage() {
         return image;
     }
 
-    public void setImage(ImageDto image) {
+    public void setImage(ImageDTO image) {
         this.image = image;
     }
 
@@ -166,11 +166,11 @@ public class ChampionSpellDto {
         this.effectBurn = effectBurn;
     }
 
-    public List<ImageDto> getAltImages() {
+    public List<ImageDTO> getAltImages() {
         return altImages;
     }
 
-    public void setAltImages(List<ImageDto> altImages) {
+    public void setAltImages(List<ImageDTO> altImages) {
         this.altImages = altImages;
     }
 

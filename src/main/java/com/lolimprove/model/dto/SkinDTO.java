@@ -6,17 +6,26 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * Created by LVDBB73 on 21/06/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BlockItemDto {
+public class SkinDTO {
 
-    private Integer count;
+    private Integer num;
+    private String name;
     private Integer id;
 
-    public Integer getCount() {
-        return count;
+    public Integer getNum() {
+        return num;
     }
 
-    public void setCount(Integer count) {
-        this.count = count;
+    public void setNum(Integer num) {
+        this.num = num;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getId() {

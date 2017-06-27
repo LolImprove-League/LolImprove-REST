@@ -8,10 +8,10 @@ import java.util.List;
  * Created by LVDBB73 on 21/06/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RecommendedDto {
+public class RecommendedDTO {
 
     private String map;
-    private List<BlockDto> blocks;
+    private List<BlockDTO> blocks;
     private String champion;
     private String title;
     private Boolean priority;
@@ -26,11 +26,11 @@ public class RecommendedDto {
         this.map = map;
     }
 
-    public List<BlockDto> getBlocks() {
+    public List<BlockDTO> getBlocks() {
         return blocks;
     }
 
-    public void setBlocks(List<BlockDto> blocks) {
+    public void setBlocks(List<BlockDTO> blocks) {
         this.blocks = blocks;
     }
 
