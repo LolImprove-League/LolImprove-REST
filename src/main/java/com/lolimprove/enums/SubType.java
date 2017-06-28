@@ -1,5 +1,7 @@
 package com.lolimprove.enums;
 
+import org.jetbrains.annotations.Contract;
+
 /**
  * Enum representing the constants of the Riot Games API
  * According to the following link @link{https://developer.riotgames.com/game-constants.html}.
@@ -47,10 +49,12 @@ public enum SubType {
         this.description = description;
     }
 
+    @Contract(pure = true)
     public String getSubtype() {
         return subtype;
     }
 
+    @Contract(pure = true)
     public String getDescription() {
         return description;
     }

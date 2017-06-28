@@ -1,9 +1,9 @@
-package com.lolimprove.model.dto;
+package com.lolimprove.dto.static_content;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
- * This class represents information about the stats of a champion.
+ * This class represents information about the stats of a static_content.
  * Used to represent data from the Riot Games API.
  *
  * Created by Lennart Van Damme on 21/06/2017.

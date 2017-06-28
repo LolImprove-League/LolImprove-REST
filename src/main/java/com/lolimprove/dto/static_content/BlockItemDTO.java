@@ -1,4 +1,4 @@
-package com.lolimprove.model.dto;
+package com.lolimprove.dto.static_content;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
