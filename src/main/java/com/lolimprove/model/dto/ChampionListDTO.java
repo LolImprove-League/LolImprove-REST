@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.HashMap;
 
 /**
- * Created by LVDBB73 on 21/06/2017.
+ * Created by Lennart Van Damme on 21/06/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ChampionListDTO {

@@ -3,7 +3,7 @@ package com.lolimprove.model.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
- * Created by LVDBB73 on 27/06/2017.
+ * Created by Lennart Van Damme on 27/06/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SummonerDTO {

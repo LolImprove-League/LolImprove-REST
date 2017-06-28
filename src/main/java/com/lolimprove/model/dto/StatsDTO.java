@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * This class represents information about the stats of a champion.
  * Used to represent data from the Riot Games API.
  *
- * Created by LVDBB73 on 21/06/2017.
+ * Created by Lennart Van Damme on 21/06/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StatsDTO {
