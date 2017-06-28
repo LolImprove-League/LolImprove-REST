@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Created by LVDBB73 on 28/06/2017.
+ * Created by Lennart Van Damme on 28/06/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GroupDTO {
