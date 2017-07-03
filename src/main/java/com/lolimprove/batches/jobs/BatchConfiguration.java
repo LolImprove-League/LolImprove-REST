@@ -2,7 +2,9 @@ package com.lolimprove.batches.jobs;
 
 import com.lolimprove.batches.listeners.JobCompletionNotificationListener;
 import com.lolimprove.batches.processors.ChampionRetrievalProcessor;
-import com.lolimprove.batches.readers.ChampionListDTOReader;
+import com.lolimprove.batches.readers.ChampionDTOReader;
+import com.lolimprove.batches.writers.ChampionItemWriter;
+import com.lolimprove.dto.static_content.champions.ChampionDTO;
 import com.lolimprove.dto.static_content.champions.ChampionListDTO;
 import com.lolimprove.model.Champion;
 import org.springframework.batch.core.Job;
@@ -12,6 +14,7 @@ import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.item.ItemReader;
+import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.database.JpaItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -38,7 +41,10 @@ public class BatchConfiguration {
     public ChampionRetrievalProcessor processor() { return new ChampionRetrievalProcessor(); }
 
     @Bean
-    public ItemReader<ChampionListDTO> reader() { return new ChampionListDTOReader(); }
+    public ItemReader<ChampionDTO> reader() { return new ChampionDTOReader(); }
+
+    @Bean
+    public ItemWriter<Champion> writer() { return new ChampionItemWriter(); }
 
     @Bean
     public Job importChampionsJob(JobCompletionNotificationListener jobCompletionNotificationListener) {
@@ -53,10 +59,10 @@ public class BatchConfiguration {
     @Bean
     public Step step1() {
         return stepBuilderFactory.get("step1")
-                .<ChampionListDTO, List<Champion>> chunk(10)
+                .<ChampionDTO, Champion> chunk(10)
                 .reader(reader())
                 .processor(processor())
-                .writer(new JpaItemWriter<>())
+                .writer(writer())
                 .build();
     }
 

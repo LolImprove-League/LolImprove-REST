@@ -12,12 +12,8 @@ public class Champion {
 
     @Id
     private Long id;
-    private String name;
 
-    public Champion(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    private String name;
 
     public Long getId() {
         return id;
@@ -33,5 +29,13 @@ public class Champion {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Champion{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
