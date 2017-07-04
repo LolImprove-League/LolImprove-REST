@@ -2,11 +2,17 @@ package com.lolimprove.utilities;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by LVDBB73 on 3/07/2017.
  */
-@PropertySource("classpath:rest.properties")
+@PropertySources({
+        @PropertySource("classpath:staticurl.properties"),
+        @PropertySource("classpath:rest.properties")
+})
+@Component
 public class RiotApiIUrlHolder {
 
     @Value("${championsURL}")
@@ -80,6 +86,57 @@ public class RiotApiIUrlHolder {
 
     @Value("${summonerURL.param3}")
     private String uriParamAccountIdKey;
+
+    @Value("${champions}")
+    private String staticChampionsURL;
+
+    @Value("${championsById}")
+    private String staticChampionsURLById;
+
+    @Value("${items}")
+    private String staticItemsURL;
+
+    @Value("${itemsById}")
+    private String staticItemsURLById;
+
+    @Value("${language-strings}")
+    private String staticLanguageStringsURL;
+
+    @Value("${languages}")
+    private String staticLanguagesURL;
+
+    @Value("${maps}")
+    private String staticMapsURL;
+
+    @Value("${masteries}")
+    private String staticMasteriesURL;
+
+    @Value("${masteriesById}")
+    private String staticMastriesURLById;
+
+    @Value("${profile-icons}")
+    private String staticProfileIconsURL;
+
+    @Value("${realms}")
+    private String staticRealmsURL;
+
+    @Value("${runes}")
+    private String staticRunesURL;
+
+    @Value("${runesById}")
+    private String staticRunesURLById;
+
+    @Value("${summoner-spells}")
+    private String staticSummonerSpellsURL;
+
+    @Value("${summoner-spellsById}")
+    private String staticSummonerSpellsURLById;
+
+    @Value("${versions}")
+    private String staticVersionsURL;
+
+    @Value("${uriParam}")
+    private String staticUriParamKey;
 
     public String getChampionsURL() {
         return championsURL;
@@ -175,5 +232,73 @@ public class RiotApiIUrlHolder {
 
     public String getUriParamAccountIdKey() {
         return uriParamAccountIdKey;
+    }
+
+    public String getStaticChampionsURL() {
+        return staticChampionsURL;
+    }
+
+    public String getStaticChampionsURLById() {
+        return staticChampionsURLById;
+    }
+
+    public String getStaticItemsURL() {
+        return staticItemsURL;
+    }
+
+    public String getStaticItemsURLById() {
+        return staticItemsURLById;
+    }
+
+    public String getStaticLanguageStringsURL() {
+        return staticLanguageStringsURL;
+    }
+
+    public String getStaticLanguagesURL() {
+        return staticLanguagesURL;
+    }
+
+    public String getStaticMapsURL() {
+        return staticMapsURL;
+    }
+
+    public String getStaticMasteriesURL() {
+        return staticMasteriesURL;
+    }
+
+    public String getStaticMastriesURLById() {
+        return staticMastriesURLById;
+    }
+
+    public String getStaticProfileIconsURL() {
+        return staticProfileIconsURL;
+    }
+
+    public String getStaticRealmsURL() {
+        return staticRealmsURL;
+    }
+
+    public String getStaticRunesURL() {
+        return staticRunesURL;
+    }
+
+    public String getStaticRunesURLById() {
+        return staticRunesURLById;
+    }
+
+    public String getStaticSummonerSpellsURL() {
+        return staticSummonerSpellsURL;
+    }
+
+    public String getStaticSummonerSpellsURLById() {
+        return staticSummonerSpellsURLById;
+    }
+
+    public String getStaticVersionsURL() {
+        return staticVersionsURL;
+    }
+
+    public String getStaticUriParamKey() {
+        return staticUriParamKey;
     }
 }

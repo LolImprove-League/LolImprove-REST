@@ -26,6 +26,5 @@ public class Application {
         return builder.build();
     }
 
-    @Bean
-    public RiotApiIUrlHolder riotApiIUrlHolder() { return new RiotApiIUrlHolder(); }
+
 }

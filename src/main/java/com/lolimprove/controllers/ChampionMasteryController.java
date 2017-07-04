@@ -2,6 +2,7 @@ package com.lolimprove.controllers;
 
 import com.lolimprove.dto.champion_mastery.ChampionMasteryDTO;
 import com.lolimprove.dto.champion_mastery.ChamptionMasteryListDTO;
+import com.lolimprove.services.ChampionMasteryURICreatorService;
 import com.lolimprove.services.URICreatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,17 +27,17 @@ import java.util.Map;
 @CrossOrigin
 public class ChampionMasteryController extends RiotAPIController {
 
-    private URICreatorService uriCreatorService;
+    private ChampionMasteryURICreatorService championMasteryURICreatorService;
 
     @Autowired
-    public ChampionMasteryController(URICreatorService uriCreatorService) {
-        this.uriCreatorService = uriCreatorService;
+    public ChampionMasteryController(ChampionMasteryURICreatorService championMasteryURICreatorService) {
+        this.championMasteryURICreatorService = championMasteryURICreatorService;
     }
 
     @RequestMapping("/champion-mastery/{summonerId}")
     public List<ChampionMasteryDTO> getChampionMasteryBySummonerId(@PathVariable final Long summonerId) {
         ResponseEntity<ChamptionMasteryListDTO> response = super.getRestTemplate().exchange(
-                uriCreatorService.createURIForMasteryBySummonerId(summonerId),
+                championMasteryURICreatorService.createURIForMasteryBySummonerId(summonerId),
                 HttpMethod.GET,
                 super.createHttpEntity(),
                 ChamptionMasteryListDTO.class
@@ -47,7 +48,7 @@ public class ChampionMasteryController extends RiotAPIController {
     @RequestMapping("/champion-mastery/{summonerId}/by-champion/{championId}")
     public ChampionMasteryDTO getChampionMasteryBySummonerIdAndChampionId(@PathVariable final Long summonerId, @PathVariable final Long championId) {
         ResponseEntity<ChampionMasteryDTO> response = super.getRestTemplate().exchange(
-                uriCreatorService.createURIForMasteryBySummonerIdAndChampionId(summonerId, championId),
+                championMasteryURICreatorService.createURIForMasteryBySummonerIdAndChampionId(summonerId, championId),
                 HttpMethod.GET,
                 super.createHttpEntity(),
                 ChampionMasteryDTO.class
@@ -58,7 +59,7 @@ public class ChampionMasteryController extends RiotAPIController {
     @RequestMapping("/champion-mastery-score/{summonerId}")
     public Integer getChampionMasteryScoreForSummonerId(@PathVariable final Long summonerId) {
         ResponseEntity<Integer> response = super.getRestTemplate().exchange(
-                uriCreatorService.createURIForChampionMasteryScoreBySummonerId(summonerId),
+                championMasteryURICreatorService.createURIForChampionMasteryScoreBySummonerId(summonerId),
                 HttpMethod.GET,
                 super.createHttpEntity(),
                 Integer.class

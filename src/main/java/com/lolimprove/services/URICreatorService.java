@@ -14,13 +14,13 @@ import java.util.Map;
  * Created by LVDBB73 on 3/07/2017.
  */
 @Service
-public class URICreatorService {
-
-    private RiotApiIUrlHolder riotApiIUrlHolder;
+public abstract class URICreatorService {
 
     @Autowired
-    public URICreatorService(RiotApiIUrlHolder riotApiIUrlHolder) {
-        this.riotApiIUrlHolder = riotApiIUrlHolder;
+    private RiotApiIUrlHolder riotApiIUrlHolder;
+
+    RiotApiIUrlHolder getRiotApiIUrlHolder() {
+        return riotApiIUrlHolder;
     }
 
     public URI createURIForChampionId(final Integer championId, final String tags) {
@@ -31,24 +31,7 @@ public class URICreatorService {
                 .buildAndExpand(uriParams).toUri();
     }
 
-    public URI createURIForMasteryBySummonerId(final Long summonerId) {
-        Map<String, String> uriParms = new HashMap<>();
-        uriParms.put(riotApiIUrlHolder.getUriParamMasterySummonerIdKey(), summonerId.toString());
-        return UriComponentsBuilder.fromUriString(riotApiIUrlHolder.getChampionMasteryBySummonerURL()).buildAndExpand(uriParms).toUri();
-    }
 
-    public URI createURIForMasteryBySummonerIdAndChampionId(final Long summonerId, final Long championId) {
-        Map<String, String> uriParms = new HashMap<>();
-        uriParms.put(riotApiIUrlHolder.getUriParamMasterySummonerIdKey(), summonerId.toString());
-        uriParms.put(riotApiIUrlHolder.getUriParamMasteryChampionIdKey(), championId.toString());
-        return UriComponentsBuilder.fromUriString(riotApiIUrlHolder.getChampionMasteryBySummonerURLByChampion()).buildAndExpand(uriParms).toUri();
-    }
-
-    public URI createURIForChampionMasteryScoreBySummonerId(final Long summonerId) {
-        Map<String, String> uriParms = new HashMap<>();
-        uriParms.put(riotApiIUrlHolder.getUriParamMasterySummonerIdKey(), summonerId.toString());
-        return UriComponentsBuilder.fromUriString(riotApiIUrlHolder.getChampionMasteryURL()).buildAndExpand(uriParms).toUri();
-    }
 
     public URI createURIforChallengerLeaguesForQueue(final Queue queue) {
         Map<String, String> uriParms = new HashMap<>();
@@ -97,6 +80,9 @@ public class URICreatorService {
         uriParams.put(riotApiIUrlHolder.getUriParamSummonerIdKey(), summonerId.toString());
         return UriComponentsBuilder.fromUriString(riotApiIUrlHolder.getSummonersURL()).buildAndExpand(uriParams).toUri();
     }
+
+
+
 
 
 }
