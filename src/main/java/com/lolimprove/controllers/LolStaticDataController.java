@@ -106,7 +106,7 @@ public class LolStaticDataController extends RiotAPIController{
                 super.createHttpEntity(),
                 MasteryListDTO.class
         );
-        return response.getBody(); 
+        return response.getBody();
     }
 
 
