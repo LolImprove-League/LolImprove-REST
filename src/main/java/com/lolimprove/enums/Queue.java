@@ -1,7 +1,5 @@
 package com.lolimprove.enums;
 
-import org.jetbrains.annotations.Contract;
-
 /**
  * Enum representing the constants of the Riot Games API
  * According to the following link @link{https://developer.riotgames.com/game-constants.html}.
@@ -66,12 +64,10 @@ public enum Queue {
         this.gameQueueConfigId = gameQueueConfigId;
     }
 
-    @Contract(pure = true)
     public String getQueueType() {
         return queueType;
     }
 
-    @Contract(pure = true)
     public int getGameQueueConfigId() {
         return gameQueueConfigId;
     }

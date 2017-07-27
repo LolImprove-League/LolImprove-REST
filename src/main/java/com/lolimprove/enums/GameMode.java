@@ -1,6 +1,5 @@
 package com.lolimprove.enums;
 
-import org.jetbrains.annotations.Contract;
 
 /**
  * Enum representing the constants of the Riot Games API
@@ -31,13 +30,10 @@ public enum GameMode {
         this.gamemode = gamemode;
         this.description = description;
     }
-
-    @Contract(pure = true)
     public String getGamemode() {
         return gamemode;
     }
 
-    @Contract(pure = true)
     public String getDescription() {
         return description;
     }

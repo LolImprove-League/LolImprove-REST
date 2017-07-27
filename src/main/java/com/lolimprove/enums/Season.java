@@ -1,7 +1,5 @@
 package com.lolimprove.enums;
 
-import org.jetbrains.annotations.Contract;
-
 /**
  * Enum representing the constants of the Riot Games API
  * According to the following link @link{https://developer.riotgames.com/game-constants.html}.
@@ -27,6 +25,5 @@ public enum Season {
         this.seasonId = seasonId;
     }
 
-    @Contract(pure = true)
     public int getSeasonId() { return this.seasonId; }
 }

@@ -1,7 +1,5 @@
 package com.lolimprove.enums;
 
-import org.jetbrains.annotations.Contract;
-
 /**
  * Enum representing the constants of the Riot Games API
  * According to the following link @link{https://developer.riotgames.com/game-constants.html}.
@@ -32,17 +30,14 @@ public enum Map {
         this.notes = notes;
     }
 
-    @Contract(pure = true)
     public int getMapid() {
         return mapid;
     }
 
-    @Contract(pure = true)
     public String getName() {
         return name;
     }
 
-    @Contract(pure = true)
     public String getNotes() {
         return notes;
     }
