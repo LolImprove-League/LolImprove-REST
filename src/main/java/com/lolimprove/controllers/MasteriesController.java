@@ -3,19 +3,12 @@ package com.lolimprove.controllers;
 import com.lolimprove.dto.masteries.MasteryPagesDTO;
 import com.lolimprove.services.URICreatorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import java.net.URI;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by Lennart Van Damme on 28/06/2017.

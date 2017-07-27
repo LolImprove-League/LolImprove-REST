@@ -6,6 +6,7 @@ import com.lolimprove.dto.static_content.items.ItemDTO;
 import com.lolimprove.dto.static_content.items.ItemListDTO;
 import com.lolimprove.dto.static_content.languages.LanguageStringsDTO;
 import com.lolimprove.dto.static_content.map.MapDataDTO;
+import com.lolimprove.dto.static_content.masteries.MasteryDTO;
 import com.lolimprove.dto.static_content.masteries.MasteryListDTO;
 import com.lolimprove.services.StaticApiURICreatorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -108,6 +109,19 @@ public class LolStaticDataController extends RiotAPIController{
         );
         return response.getBody();
     }
+
+    @RequestMapping("static-data/masteries/{id}")
+    public MasteryDTO getMastery(@PathVariable final Long id) {
+        ResponseEntity<MasteryDTO> response = super.getRestTemplate().exchange(
+                staticApiURICreatorService.createURIForStaticContentMasterieById(id),
+                HttpMethod.GET,
+                super.createHttpEntity(),
+                MasteryDTO.class
+        );
+        return response.getBody();
+    }
+
+
 
 
 }
