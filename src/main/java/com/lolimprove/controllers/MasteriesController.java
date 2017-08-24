@@ -1,36 +1,41 @@
 package com.lolimprove.controllers;
 
+import com.google.common.base.Preconditions;
 import com.lolimprove.dto.masteries.MasteryPagesDTO;
 import com.lolimprove.services.URICreatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.URI;
 
 /**
  * Created by Lennart Van Damme on 28/06/2017.
  */
 @RestController
-@CrossOrigin
-public class MasteriesController extends RiotAPIController {
+class MasteriesController extends RiotAPIController {
 
     @Autowired
     @Qualifier("rootURIService")
     private URICreatorService uriCreatorService;
 
     @RequestMapping("/masteries/{summonerId}")
+    @ResponseBody
+    @ResponseStatus(HttpStatus.OK)
     public MasteryPagesDTO getMasteryPagesForSummoner(@PathVariable final Long summonerId) {
-        ResponseEntity<MasteryPagesDTO> reponse = super.getRestTemplate().exchange(
-                uriCreatorService.createURIForMasteries(summonerId),
+        Preconditions.checkNotNull(summonerId);
+        URI uri = uriCreatorService.createURIForMasteries(summonerId);
+        Preconditions.checkNotNull(uri);
+        ResponseEntity<MasteryPagesDTO> response = super.getRestTemplate().exchange(
+                uri,
                 HttpMethod.GET,
                 super.createHttpEntity(),
                 MasteryPagesDTO.class
         );
-        return reponse.getBody();
+        return response.getBody();
     }
 
 

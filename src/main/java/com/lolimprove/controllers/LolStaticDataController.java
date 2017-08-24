@@ -12,10 +12,7 @@ import com.lolimprove.services.StaticApiURICreatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.xml.ws.Response;
 
@@ -23,8 +20,7 @@ import javax.xml.ws.Response;
  * Created by LVDBB73 on 4/07/2017.
  */
 @RestController
-@CrossOrigin
-public class LolStaticDataController extends RiotAPIController{
+class LolStaticDataController extends RiotAPIController{
 
     private StaticApiURICreatorService staticApiURICreatorService;
 
@@ -34,6 +30,7 @@ public class LolStaticDataController extends RiotAPIController{
     }
 
     @RequestMapping("/static-data/champions")
+    @ResponseBody
     public ChampionListDTO getChampions() {
         ResponseEntity<ChampionListDTO> response = super.getRestTemplate().exchange(
                 staticApiURICreatorService.createURIForStaticContentChampions(),
@@ -45,6 +42,7 @@ public class LolStaticDataController extends RiotAPIController{
     }
 
     @RequestMapping("/static-data/champions/{id}")
+    @ResponseBody
     public ChampionDTO getChampion(@PathVariable final Long id) {
         ResponseEntity<ChampionDTO> response = super.getRestTemplate().exchange(
                 staticApiURICreatorService.createURIForStaticContentChampionByID(id),
@@ -56,6 +54,7 @@ public class LolStaticDataController extends RiotAPIController{
     }
 
     @RequestMapping("/static-data/items")
+    @ResponseBody
     public ItemListDTO getItems() {
         ResponseEntity<ItemListDTO> response = super.getRestTemplate().exchange(
                 staticApiURICreatorService.createURIForStaticContentItems(),
@@ -67,6 +66,7 @@ public class LolStaticDataController extends RiotAPIController{
     }
 
     @RequestMapping("/static-data/items/{id}")
+    @ResponseBody
     public ItemDTO getItem(@PathVariable final Long id) {
         ResponseEntity<ItemDTO> resposne = super.getRestTemplate().exchange(
                 staticApiURICreatorService.createURIForStaticContentItemById(id),
@@ -78,6 +78,7 @@ public class LolStaticDataController extends RiotAPIController{
     }
 
     @RequestMapping("/static-data/language-strings")
+    @ResponseBody
     public LanguageStringsDTO getLanguageStrings() {
         ResponseEntity<LanguageStringsDTO> response = super.getRestTemplate().exchange(
                 staticApiURICreatorService.createURIForStaticContentLanguageStrings(),
@@ -89,6 +90,7 @@ public class LolStaticDataController extends RiotAPIController{
     }
 
     @RequestMapping("/static-data/maps")
+    @ResponseBody
     public MapDataDTO getMaps() {
         ResponseEntity<MapDataDTO> response = super.getRestTemplate().exchange(
                 staticApiURICreatorService.createURIForStaticContentMaps(),
@@ -100,6 +102,7 @@ public class LolStaticDataController extends RiotAPIController{
     }
 
     @RequestMapping("static-data/masteries")
+    @ResponseBody
     public MasteryListDTO getMasteries() {
         ResponseEntity<MasteryListDTO> response = super.getRestTemplate().exchange(
                 staticApiURICreatorService.createURIForStaticContentMasteries(),
@@ -111,6 +114,7 @@ public class LolStaticDataController extends RiotAPIController{
     }
 
     @RequestMapping("static-data/masteries/{id}")
+    @ResponseBody
     public MasteryDTO getMastery(@PathVariable final Long id) {
         ResponseEntity<MasteryDTO> response = super.getRestTemplate().exchange(
                 staticApiURICreatorService.createURIForStaticContentMasterieById(id),

@@ -7,6 +7,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -14,8 +15,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  * Created by Lennart Van Damme on 28/06/2017.
  */
 @RestController
-@CrossOrigin
-public class LeagueStatusController extends RiotAPIController{
+class LeagueStatusController extends RiotAPIController{
 
     private RiotApiIUrlHolder riotApiIUrlHolder;
 
@@ -25,6 +25,7 @@ public class LeagueStatusController extends RiotAPIController{
     }
 
     @RequestMapping("/league-status")
+    @ResponseBody
     public SharedStatus getLeagueStatus() {
         ResponseEntity<SharedStatus> response = super.getRestTemplate().exchange(
                 UriComponentsBuilder.fromUriString(riotApiIUrlHolder.getLeagueStatusURL()).build().toUri(),

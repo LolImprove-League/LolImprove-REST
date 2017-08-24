@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
  * Created by Lennart Van Damme on 27/06/2017.
  */
 @PropertySource("classpath:rest.properties")
-public class RiotAPIController {
+abstract class RiotAPIController {
 
     @Value("${apiKey}")
     private String apiKey;

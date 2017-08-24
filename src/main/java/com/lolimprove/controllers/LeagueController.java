@@ -24,24 +24,28 @@ import java.util.Set;
  * Created by Lennart Van Damme on 28/06/2017.
  */
 @RestController
-@CrossOrigin
-public class LeagueController extends RiotAPIController {
+class LeagueController extends RiotAPIController {
 
     @Autowired
     @Qualifier("rootURIService")
     private URICreatorService uriCreatorService;
 
+
+
     @RequestMapping("/leagues/challenger")
+    @ResponseBody
     public LeagueListDTO getChallengerLeagueQueue(@RequestParam final String queue) {
         return getLeagueListDTO(uriCreatorService.createURIforChallengerLeaguesForQueue(determineQueueType(queue)));
     }
 
     @RequestMapping("/leagues/master")
+    @ResponseBody
     public LeagueListDTO getMasterLeagueQueue(@RequestParam final String queue) {
         return getLeagueListDTO(uriCreatorService.createURIforMasterLeaguesForQueue(determineQueueType(queue)));
     }
 
     @RequestMapping("/leagues/{summonerId}")
+    @ResponseBody
     public Set<LeagueListDTO> getLeaguesForAllQueueForSummonerId(@PathVariable final Long summonerId) {
         ParameterizedTypeReference<Set<LeagueListDTO>> responseType =  new ParameterizedTypeReference<Set<LeagueListDTO>>() {};
         ResponseEntity<Set<LeagueListDTO>> response = super.getRestTemplate().exchange(
@@ -54,6 +58,7 @@ public class LeagueController extends RiotAPIController {
     }
 
     @RequestMapping(value = "/leagues/position/{summonerId}")
+    @ResponseBody
     public Set<LeaguePositionDTO> getLeaguePositionForAllQueueForSummonerId(@PathVariable final Long summonerId) {
         ParameterizedTypeReference<Set<LeaguePositionDTO>> responseType =  new ParameterizedTypeReference<Set<LeaguePositionDTO>>() {};
         ResponseEntity<Set<LeaguePositionDTO>> response = super.getRestTemplate().exchange(

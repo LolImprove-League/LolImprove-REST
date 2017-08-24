@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
@@ -22,14 +19,14 @@ import java.util.Map;
  * Created by Lennart Van Damme on 27/06/2017.
  */
 @RestController
-@CrossOrigin
-public class SummonerController extends RiotAPIController{
+class SummonerController extends RiotAPIController{
 
     @Autowired
     @Qualifier("rootURIService")
     private URICreatorService uriCreatorService;
 
     @RequestMapping("/summoners/by-name/{name}")
+    @ResponseBody
     public SummonerDTO getSummonerByName(@PathVariable final String summonerName) {
         ResponseEntity<SummonerDTO> response = super.getRestTemplate().exchange(
                 uriCreatorService.createURISummonerByName(summonerName),
@@ -41,6 +38,7 @@ public class SummonerController extends RiotAPIController{
     }
 
     @RequestMapping("/summoners/by-account/{accountId}")
+    @ResponseBody
     public SummonerDTO getSummonerByAccountId(@PathVariable final Long accountId) {
         ResponseEntity<SummonerDTO> response = super.getRestTemplate().exchange(
                 uriCreatorService.createURISummonerByAccountId(accountId),
@@ -52,6 +50,7 @@ public class SummonerController extends RiotAPIController{
     }
 
     @RequestMapping("/summoners/{summonerId}")
+    @ResponseBody
     public SummonerDTO getSummonerBySummonerId(@PathVariable final Long summonerId) {
         ResponseEntity<SummonerDTO> response = super.getRestTemplate().exchange(
                 uriCreatorService.createURISummonerById(summonerId),
