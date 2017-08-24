@@ -6,6 +6,7 @@ import com.lolimprove.enums.Queue;
 import com.lolimprove.services.URICreatorService;
 import com.sun.jndi.toolkit.url.Uri;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.ParameterizedTypeReference;
@@ -26,12 +27,9 @@ import java.util.Set;
 @CrossOrigin
 public class LeagueController extends RiotAPIController {
 
-    private URICreatorService uriCreatorService;
-
     @Autowired
-    public LeagueController(URICreatorService uriCreatorService) {
-        this.uriCreatorService = uriCreatorService;
-    }
+    @Qualifier("rootURIService")
+    private URICreatorService uriCreatorService;
 
     @RequestMapping("/leagues/challenger")
     public LeagueListDTO getChallengerLeagueQueue(@RequestParam final String queue) {

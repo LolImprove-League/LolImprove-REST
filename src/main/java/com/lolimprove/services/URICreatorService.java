@@ -3,6 +3,7 @@ package com.lolimprove.services;
 import com.lolimprove.enums.Queue;
 import com.lolimprove.utilities.RiotApiIUrlHolder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -14,7 +15,8 @@ import java.util.Map;
  * Created by LVDBB73 on 3/07/2017.
  */
 @Service
-public abstract class URICreatorService {
+@Qualifier("rootURIService")
+public class URICreatorService {
 
     @Autowired
     private RiotApiIUrlHolder riotApiIUrlHolder;

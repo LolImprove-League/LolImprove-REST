@@ -3,6 +3,7 @@ package com.lolimprove.controllers;
 import com.lolimprove.dto.masteries.MasteryPagesDTO;
 import com.lolimprove.services.URICreatorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -17,12 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class MasteriesController extends RiotAPIController {
 
-    private URICreatorService uriCreatorService;
-
     @Autowired
-    public MasteriesController(URICreatorService uriCreatorService) {
-        this.uriCreatorService = uriCreatorService;
-    }
+    @Qualifier("rootURIService")
+    private URICreatorService uriCreatorService;
 
     @RequestMapping("/masteries/{summonerId}")
     public MasteryPagesDTO getMasteryPagesForSummoner(@PathVariable final Long summonerId) {

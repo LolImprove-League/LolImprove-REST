@@ -1,5 +1,6 @@
 package com.lolimprove.services;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -11,6 +12,7 @@ import java.util.Map;
  * Created by LVDBB73 on 4/07/2017.
  */
 @Service
+@Qualifier("champion")
 public class ChampionMasteryURICreatorService extends URICreatorService {
 
     public URI createURIForMasteryBySummonerId(final Long summonerId) {

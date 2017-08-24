@@ -5,6 +5,7 @@ import com.lolimprove.dto.static_content.champions.ChampionListDTO;
 import com.lolimprove.services.URICreatorService;
 import com.lolimprove.utilities.RiotApiIUrlHolder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,7 @@ public class ChampionController extends RiotAPIController{
     private RiotApiIUrlHolder riotApiIUrlHolder;
 
     @Autowired
-    public ChampionController(URICreatorService uriCreatorService, RiotApiIUrlHolder riotApiIUrlHolder) {
+    public ChampionController(@Qualifier("champion") URICreatorService uriCreatorService, RiotApiIUrlHolder riotApiIUrlHolder) {
         this.uriCreatorService = uriCreatorService;
         this.riotApiIUrlHolder = riotApiIUrlHolder;
     }

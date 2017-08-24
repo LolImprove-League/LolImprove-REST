@@ -70,5 +70,11 @@
             <artifactId>spring-boot-starter-batch</artifactId>
             <version>1.5.4.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>

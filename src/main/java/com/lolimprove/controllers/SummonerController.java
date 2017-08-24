@@ -3,6 +3,7 @@ package com.lolimprove.controllers;
 import com.lolimprove.dto.summoners.SummonerDTO;
 import com.lolimprove.services.URICreatorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.HttpMethod;
@@ -24,12 +25,9 @@ import java.util.Map;
 @CrossOrigin
 public class SummonerController extends RiotAPIController{
 
-    private URICreatorService uriCreatorService;
-
     @Autowired
-    public SummonerController(URICreatorService uriCreatorService) {
-        this.uriCreatorService = uriCreatorService;
-    }
+    @Qualifier("rootURIService")
+    private URICreatorService uriCreatorService;
 
     @RequestMapping("/summoners/by-name/{name}")
     public SummonerDTO getSummonerByName(@PathVariable final String summonerName) {

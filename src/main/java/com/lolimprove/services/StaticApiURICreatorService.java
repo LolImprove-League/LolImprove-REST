@@ -3,6 +3,7 @@ package com.lolimprove.services;
 import com.lolimprove.controllers.RiotAPIController;
 import com.lolimprove.utilities.RiotApiIUrlHolder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -14,6 +15,7 @@ import java.util.Map;
  * Created by LVDBB73 on 4/07/2017.
  */
 @Service
+@Qualifier("static")
 public class StaticApiURICreatorService extends URICreatorService {
 
     public URI createURIForStaticContentChampions() {
